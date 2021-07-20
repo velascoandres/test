@@ -5,6 +5,7 @@
 body {
     background: #091228; /* 80% Black */
     color: white;
+    font-family: 'Roboto', sans-serif;
 }
 
 .center-container {
@@ -23,19 +24,20 @@ body {
     border-radius: 10px;
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
-    padding-left: 0.6;
-    padding-right: 0.6;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
     transition: 0.3s;
     outline: none;
     border: none;
     font-size: 16px;
     font-weight: 400;
     border: 2px solid transparent;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 
 .button:hover {
     border: 2px solid #bf1650;
-    background: #2d2d2d !important;
     transition: 0.3s;
 }
 
@@ -44,33 +46,32 @@ body {
     transition: 0.3s;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #bf1650;
 }
 
-
-.lang-badge{
+.lang-badge {
     border: 1px solid white;
-    background-color: #202B49;
+    background-color: #202b49;
     color: white;
     border-radius: 10px;
-    padding: 0.3rem;
+    padding: 0.4rem;
+    width: fit-content;
+}
+
+p {
     margin-top: 1rem;
-    margin-bottom: 1rem;
 }
-
-p{
-   margin-top: 1rem; 
-}
-
 
 #react-paginate ul {
     display: inline-block;
     padding-left: 15px;
     padding-right: 15px;
-  }
-  
-  #react-paginate li {
+}
+
+#react-paginate li {
     display: inline-block;
-  }
+}

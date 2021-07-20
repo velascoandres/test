@@ -1,0 +1,14 @@
+:root{
+    // --bg-color: #061029;
+    --black: rgb(33, 35, 41);
+    --gray: #484848;
+    --primary: #1a1e39;
+    --secondary: #202b49;
+    --pink: #bf1650;
+    // gradients
+    --chill-gradient: linear-gradient(135deg, var(--primary) 0%,var(--secondary) 100%);
+    --pink-gradient: linear-gradient(135deg,  var(--pink) 0%, var(--primary) 100%);
+    --dark-gradient: linear-gradient(135deg, var(--black) 0%,var(--gray) 100%);
+    --inverse-dark-gradient: linear-gradient(135deg, var(--gray) 0%,var(--black) 100%);
+}
+  

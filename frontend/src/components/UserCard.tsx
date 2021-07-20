@@ -2,7 +2,7 @@ import React from 'react';
 
 import { GitHubUser } from '../interfaces/profile-context.model';
 
-import '../css/user-card.css';
+import '../styles/user-card.scss';
 
 export type UserCardProps = { user: GitHubUser };
 

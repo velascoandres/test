@@ -27,27 +27,34 @@ export const PaginatedRepositoryList: React.FC<PaginatedRepositoryListProps> =
 
         return (
             <>
-                {isLoading && <Loader />}
-                <RepositoryList repositories={repositories} />
-                <ReactPaginate
-                    pageCount={pageCount}
-                    previousLabel={'previous'}
-                    nextLabel={'next'}
-                    breakLabel={'...'}
-                    breakClassName={'break-me'}
-                    marginPagesDisplayed={2}
-                    pageRangeDisplayed={5}
-                    onPageChange={handlePageClick}
-                    containerClassName={'pagination'}
-                    activeClassName={'active'}
-                    breakLinkClassName={'page-link'}
-                    pageClassName={'page-item'}
-                    pageLinkClassName={'page-link'}
-                    previousClassName={'page-item'}
-                    previousLinkClassName={'page-link'}
-                    nextClassName={'page-item'}
-                    nextLinkClassName={'page-link'}
-                />
+                {isLoading ? (
+                    <Loader />
+                ) : (
+                    <>
+                        <RepositoryList repositories={repositories} />
+                    </>
+                )}
+                <div className="container">
+                    <ReactPaginate
+                        pageCount={pageCount}
+                        previousLabel={'previous'}
+                        nextLabel={'next'}
+                        breakLabel={'...'}
+                        breakClassName={'break-me'}
+                        marginPagesDisplayed={2}
+                        pageRangeDisplayed={5}
+                        onPageChange={handlePageClick}
+                        containerClassName={'pagination'}
+                        activeClassName={'active'}
+                        breakLinkClassName={'page-link'}
+                        pageClassName={'page-item'}
+                        pageLinkClassName={'page-link'}
+                        previousClassName={'page-item'}
+                        previousLinkClassName={'page-link'}
+                        nextClassName={'page-item'}
+                        nextLinkClassName={'page-link'}
+                    />
+                </div>
             </>
         );
     };

@@ -2,7 +2,7 @@ import React from 'react';
 import { Repository } from '../interfaces/repository.model';
 import { Button } from './Button';
 
-import '../css/repository-item.css';
+import '../styles/repository-item.scss';
 
 export type RepositoryItemProps = {
     repository: Repository;
@@ -16,7 +16,6 @@ export const RepositoryItem: React.FC<RepositoryItemProps> = ({
         stargazers_count: stars,
         description,
         language,
-        html_url,
         clone_url,
     } = repository;
 
@@ -24,7 +23,6 @@ export const RepositoryItem: React.FC<RepositoryItemProps> = ({
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer');
         if (newWindow) newWindow.opener = null;
     };
-    // const goToRepository = () => { };
 
     return (
         <div className="container repository-card">
@@ -32,9 +30,10 @@ export const RepositoryItem: React.FC<RepositoryItemProps> = ({
                 <div className="col-sm-12">
                     <h4>{full_name}</h4>
                 </div>
-                <div className="col-sm-12">
-                    {language && <span className="lang-badge">{language}</span>}
+                <div className="tagged">
+                    {language && <span>{language}</span>}
                 </div>
+
                 <div className="col-sm-12">
                     <br />
                     {new Array(stars).fill(1).map((item) => (
@@ -50,17 +49,10 @@ export const RepositoryItem: React.FC<RepositoryItemProps> = ({
                 <div className="col-sm-12 d-flex">
                     <div className="p-2">
                         <Button
-                            title="Clone"
-                            iconClass="fa fa-clone"
-                            color="pink"
+                            title="Open"
+                            iconClass="fa fa-github"
+                            color="dark"
                             onClick={() => handleUrl(clone_url)}
-                        />
-                    </div>
-                    <div className="p-2">
-                        <Button
-                            title="See more"
-                            iconClass="fa fa-code-fork"
-                            onClick={() => handleUrl(html_url)}
                         />
                     </div>
                 </div>

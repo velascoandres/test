@@ -9,12 +9,19 @@ export const RepositoryList: React.FC<RepositoryListProps> = ({
 }: RepositoryListProps) => {
     return (
         <div className="container">
-            {repositories.map((repository: Repository) => {
+            {repositories.map((repository: Repository, index: number) => {
+                const animatedClass =
+                    index % 2 === 0
+                        ? 'animate__zoomInLeft'
+                        : 'animate__zoomInRight';
+
                 return (
-                    <RepositoryItem
+                    <div
                         key={repository.id}
-                        repository={repository}
-                    />
+                        className={`animate__animated ${animatedClass}`}
+                    >
+                        <RepositoryItem repository={repository} />
+                    </div>
                 );
             })}
         </div>

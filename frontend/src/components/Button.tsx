@@ -1,15 +1,18 @@
 import React from 'react';
 
-const colors: Record<'green' | 'pink' | 'blue', string> = {
+type Color = 'green' | 'pink' | 'blue' | 'dark';
+
+const colors: Record<Color, string> = {
     green: '#3BA252',
     pink: '#E75E91',
     blue: '#1A1E39',
+    dark: '#2d2d2d',
 };
 
 export type ButtonProps = {
     iconClass?: string;
     title: string;
-    color?: 'green' | 'pink' | 'blue';
+    color?: Color;
     onClick: () => void;
 };
 
@@ -20,7 +23,7 @@ export const Button: React.FC<ButtonProps> = ({
     onClick,
 }: ButtonProps) => {
     const buttonSyle = {
-        backgroundColor: color ? colors[color] : colors.green,
+        background: color ? colors[color] : 'transparent',
     };
 
     return (

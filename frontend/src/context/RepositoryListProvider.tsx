@@ -18,6 +18,7 @@ type RepositoryListProviderProps = {
     children: JSX.Element;
 };
 
+// This provider handles the repository list pagination
 export const RepositoryListProvider: React.FC<RepositoryListProviderProps> = ({
     children,
 }: RepositoryListProviderProps) => {
@@ -25,16 +26,16 @@ export const RepositoryListProvider: React.FC<RepositoryListProviderProps> = ({
         repositoryListReducer,
         initialRepositoryListState
     );
-
+    // this function is expose for the sake of load repositories by owner
     const loadRepositories = useCallback(
         async (owner: string, page: number = 1, perPage: number = 10) => {
+            // dispatch a start-loading action to show the loader compoment
             dispatch({ type: RepositoryListActionsEnum.startLoading });
             try {
                 const response: AxiosResponse<Repository[]> = await axios.get(
                     `https://api.github.com/users/${owner}/repos?sort=updated&per_page=10&page=${page}`
                 );
                 const repositories = response.data;
-
                 const loadAction = {
                     type: RepositoryListActionsEnum.loadRepositories,
                     payload: repositories,
@@ -42,6 +43,7 @@ export const RepositoryListProvider: React.FC<RepositoryListProviderProps> = ({
 
                 dispatch(loadAction);
             } catch (error) {
+                // dispatch an error action
                 const errorAction = {
                     type: RepositoryListActionsEnum.errorOnload,
                     payload: 'Error on load',
@@ -51,7 +53,7 @@ export const RepositoryListProvider: React.FC<RepositoryListProviderProps> = ({
         },
         [dispatch]
     );
-
+    // only loadRepositories and repositoryListState are expose throught the provider
     return (
         <RepositoryListContext.Provider
             value={{
