@@ -1,0 +1,76 @@
+.circle-img {
+    border-radius: 50%;
+}
+
+body {
+    background: #091228; /* 80% Black */
+    color: white;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-content {
+    width: 300px;
+    height: 300px;
+}
+
+.button {
+    color: white;
+    border-radius: 10px;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.6;
+    padding-right: 0.6;
+    transition: 0.3s;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border: 2px solid transparent;
+}
+
+.button:hover {
+    border: 2px solid #bf1650;
+    background: #2d2d2d !important;
+    transition: 0.3s;
+}
+
+.button:active {
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+h2, h3, h4 {
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #bf1650;
+}
+
+
+.lang-badge{
+    border: 1px solid white;
+    background-color: #202B49;
+    color: white;
+    border-radius: 10px;
+    padding: 0.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+p{
+   margin-top: 1rem; 
+}
+
+
+#react-paginate ul {
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  #react-paginate li {
+    display: inline-block;
+  }
